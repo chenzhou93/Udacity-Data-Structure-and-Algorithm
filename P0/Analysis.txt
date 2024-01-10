@@ -1,0 +1,25 @@
+Task 0
+It asked the first record for each csv file so the retreieve takes O(1) to process regarding time complexity.
+
+Task 1
+I use the Set collection in Python to track unique values for numbers.
+I need to loop through all records read from csv for both files, the time complexity is O(n).
+
+Task 2
+The solution idea is to find the maximum value of a record in terms of time spending, which is a column in the csv file.
+To find the max value, instead of sorting all of them, I ran a loop, compare and replace the maximum value as the final result.
+Looping through all records takes O(n).
+
+Task 3
+Part A requires some case processes based on the type of call number, so I used conditional checking/process in a loop with some helper functions.
+As the output needs to be sorted, the sorting method in Python takes O(nlogn). The for loop that process the data takes O(n).
+
+Part B only needs to screen all phone numbers again so it also takes O(n).
+
+Task 4
+I intended to use Set operation to find those unique phone numbers that meet the task requirement,
+but building those sets takes O(n) as it looped through all records.
+
+For set operation time complexity I am not sure, as Google said it may take O(1).
+
+As the task requires, the output has to be sorted so the sorting process takes O(nlogn).
