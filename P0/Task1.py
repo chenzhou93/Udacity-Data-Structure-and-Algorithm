@@ -30,5 +30,5 @@ for call in calls:
     calls_set.add(call[1])
 
 # Time Complexity: O(1)
-print(f"There are {len(texts_set) + len(calls_set)} different telephone numbers in the records.")
+print(f"There are {len(texts_set | calls_set)} different telephone numbers in the records.")
 

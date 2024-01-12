@@ -19,28 +19,24 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
-month_list = ["January", "Feburary", "March", "April", "May",
-              "June", "July", "August", "September", "October",
-              "November", "December"]
 
-def getFormatDate(call):
-    tmp_date = call[2].split(' ')[0].split('-')
-    month_index = int(tmp_date[0])
-    month = month_list[month_index - 1]
-    year = tmp_date[2]
-    return month + " " + year
+september_call_dict = {}
+def add_september_calls(call):
+    tmp_date = call[2].split(' ')[0]
+    if "09-2016" in tmp_date:
+        september_call_dict[call[0]] = call[-1]
+
+for call in calls:
+    add_september_calls(call)
 
 max_time_val = -1
-max_num, max_time, max_date = "", "", ""
+max_num, max_time = "", ""
 
 # Time Complexity: O(n)
-for call in calls:
-    if int(call[3]) > max_time_val:
-        max_time_val = int(call[3])
-        max_num = call[0]
-        max_time = call[3]
-        max_date = getFormatDate(call)
-        
-        
-print(f"{max_num} spent the longest time, {max_time} seconds, on the phone during {max_date}.")
+for call_number, duration in september_call_dict.items():
+    if duration > max_time:
+        max_time = duration
+        max_num = call_number
 
+        
+print(f"{max_num} spent the longest time, {max_time} seconds, on the phone during September 2016.")

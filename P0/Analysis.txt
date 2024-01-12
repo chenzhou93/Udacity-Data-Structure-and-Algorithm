@@ -6,8 +6,8 @@ I use the Set collection in Python to track unique values for numbers.
 I need to loop through all records read from csv for both files, the time complexity is O(n).
 
 Task 2
-The solution idea is to find the maximum value of a record in terms of time spending, which is a column in the csv file.
-To find the max value, instead of sorting all of them, I ran a loop, compare and replace the maximum value as the final result.
+The solution idea is to find the maximum value of a record in terms of time spending in a particular month: September 2016, which is stored at last column in the csv file.
+To find the max value, instead of sorting all of them, I stored all calls in September 2016 in a dictionaly, then ran a loop for key and value pair, compared and replaced the maximum value as the final result.
 Looping through all records takes O(n).
 
 Task 3
