@@ -7,7 +7,8 @@ I need to loop through all records read from csv for both files, the time comple
 
 Task 2
 The solution idea is to find the maximum value of a record in terms of time spending in a particular month: September 2016, which is stored at last column in the csv file.
-To find the max value, instead of sorting all of them, I stored all calls in September 2016 in a dictionaly, then ran a loop for key and value pair, compared and replaced the maximum value as the final result.
+A dictionary is introduced to store phone numebers (calling and receiving) as keys and their accumulated time spent in seconds as values.
+To find the max value, use the max() function in Python to find the max value and key.
 Looping through all records takes O(n).
 
 Task 3

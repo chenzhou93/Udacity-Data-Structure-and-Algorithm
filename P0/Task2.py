@@ -21,22 +21,16 @@ September 2016.".
 """
 
 september_call_dict = {}
-def add_september_calls(call):
+def calculate_september_calls(call):
     tmp_date = call[2].split(' ')[0]
     if "09-2016" in tmp_date:
-        september_call_dict[call[0]] = call[-1]
+        september_call_dict[call[0]] = september_call_dict.get(call[0], 0) + int(call[3])
 
 for call in calls:
-    add_september_calls(call)
+    calculate_september_calls(call)
 
-max_time_val = -1
-max_num, max_time = "", ""
 
-# Time Complexity: O(n)
-for call_number, duration in september_call_dict.items():
-    if duration > max_time:
-        max_time = duration
-        max_num = call_number
-
+max_key = max(september_call_dict, key = lambda k: september_call_dict[k])
+max_value = september_call_dict[max_key]
         
-print(f"{max_num} spent the longest time, {max_time} seconds, on the phone during September 2016.")
+print(f"{max_key} spent the longest time, {max_value} seconds, on the phone during September 2016.")
